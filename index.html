@@ -1,33 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
 
-  We're coming soon
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
+      :root {
+        --Desaturated-Red: hsl(0, 36%, 70%);
+        --Soft-Red: hsl(0, 93%, 68%);
+        --Dark-Grayish-Red: hsl(0, 6%, 24%);
 
-  Email Address
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
-</body>
+        --Linear-Gradient1: linear-gradient(
+          135deg,
+          hsl(0, 0%, 100%),
+          hsl(0, 100%, 98%)
+        );
+        --Linear-Gradient2: linear-gradient(
+          135deg,
+          hsl(0, 80%, 86%),
+          hsl(0, 74%, 74%)
+        );
+
+        --Left_pad: 165px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Josefin Sans', sans-serif;
+        color: var(--Dark-Grayish-Red);
+
+        min-height: 100vh;
+        width: 100vw;
+        font-size: 16px;
+        background: var(--Linear-Gradient1);
+
+        display: flex;
+        /* align-items: center; */
+      }
+
+      #logo {
+        position: absolute;
+        top: 65px;
+        left: var(--Left_pad);
+      }
+
+      .left-side {
+        position: relative;
+        flex: 1;
+      }
+
+      #bg-pattern {
+        width: 100%;
+      }
+
+      .left-side .contents {
+        max-width: 465px;
+        position: absolute;
+        top: 50%;
+        left: var(--Left_pad);
+        transform: translateY(-50%);
+      }
+
+      #hero {
+        height: 100vh;
+      }
+
+      footer {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <img id="logo" src="./images/logo.svg" alt="Base Apparel Logo" />
+
+    <div class="left-side">
+      <div class="contents">
+        <h1>We're coming soon</h1>
+        <p>
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <input type="text" placeholder="Email Address" />
+      </div>
+      <img
+        id="bg-pattern"
+        src="./images/bg-pattern-desktop.svg"
+        alt="backgrouind pattern"
+      />
+      <footer>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Your Name Here</a>.
+        </p>
+      </footer>
+    </div>
+    <img id="hero" src="./images/hero-desktop.jpg" alt="good looking woman" />
+  </body>
 </html>
