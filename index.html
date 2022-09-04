@@ -35,6 +35,10 @@
         );
 
         --Left_pad: 165px;
+
+        --Design-font: 'Josefin Sans', sans-serif;
+
+        --input-section-border-radii: 32px;
       }
 
       * {
@@ -44,7 +48,8 @@
       }
 
       body {
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: var(--Design-font);
+        letter-spacing: 0.5px;
         color: var(--Dark-Grayish-Red);
 
         min-height: 100vh;
@@ -53,13 +58,13 @@
         background: var(--Linear-Gradient1);
 
         display: flex;
-        /* align-items: center; */
       }
 
       #logo {
         position: absolute;
         top: 65px;
         left: var(--Left_pad);
+        z-index: 2;
       }
 
       .left-side {
@@ -67,8 +72,66 @@
         flex: 1;
       }
 
+      .left-side h1 {
+        font-size: 64px;
+        text-transform: uppercase;
+        letter-spacing: 17px;
+        margin-bottom: 42px;
+        font-weight: 600;
+      }
+
+      .left-side h1 .special {
+        font-weight: 300;
+        color: var(--Desaturated-Red);
+      }
+
+      .input-section {
+        position: relative;
+      }
+
+      .left-side p {
+        color: var(--Desaturated-Red);
+        margin-bottom: 42px;
+      }
+
+      .left-side input {
+        width: 100%;
+        padding: 18px 32px;
+        border-radius: var(--input-section-border-radii);
+        border: solid var(--Desaturated-Red) 1px;
+        color: var(--Desaturated-Red);
+        font-family: var(--Design-font);
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
+
+      #enter-email {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 56px;
+        border-radius: var(--input-section-border-radii);
+        border: none;
+        background: var(--Linear-Gradient2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        cursor: pointer;
+      }
+
       #bg-pattern {
         width: 100%;
+        /* user-drag: none; */
+        -webkit-user-drag: none;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
       }
 
       .left-side .contents {
@@ -79,8 +142,28 @@
         transform: translateY(-50%);
       }
 
-      #hero {
+      #hero-desktop {
         height: 100vh;
+      }
+      #hero-mobile {
+        display: none;
+      }
+
+      @media screen and (max-width: 1300px) {
+        body {
+          flex-direction: column;
+        }
+
+        #logo {
+          position: static;
+        }
+
+        #hero-desktop {
+          display: none;
+        }
+        #hero-mobile {
+          display: block;
+        }
       }
 
       footer {
@@ -101,16 +184,26 @@
   </head>
   <body>
     <img id="logo" src="./images/logo.svg" alt="Base Apparel Logo" />
+    <img
+      id="hero-mobile"
+      src="./images/hero-mobile.jpg"
+      alt="good looking woman"
+    />
 
     <div class="left-side">
       <div class="contents">
-        <h1>We're coming soon</h1>
+        <h1><span class="special">We're</span> coming soon</h1>
         <p>
           Hello fellow shoppers! We're currently building our new fashion store.
           Add your email below to stay up-to-date with announcements and our
           launch deals.
         </p>
-        <input type="text" placeholder="Email Address" />
+        <div class="input-section">
+          <input type="text" placeholder="Email Address" />
+          <button id="enter-email">
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
       </div>
       <img
         id="bg-pattern"
@@ -126,6 +219,10 @@
         </p>
       </footer>
     </div>
-    <img id="hero" src="./images/hero-desktop.jpg" alt="good looking woman" />
+    <img
+      id="hero-desktop"
+      src="./images/hero-desktop.jpg"
+      alt="good looking woman"
+    />
   </body>
 </html>
